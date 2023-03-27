@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
 class Constants {
@@ -6,5 +5,5 @@ class Constants {
   static String apiKey = "AIzaSyAO33ZtDhHXDqcrwGGtu2LbRDBLh34joSM";
   static String messagingSenderId = "158267982169";
   static String projectId = "chatapp-ayisha";
-  final primaryColor = const Color(0xffee7b64);
+  final primaryColor = Colors.red;
 }
