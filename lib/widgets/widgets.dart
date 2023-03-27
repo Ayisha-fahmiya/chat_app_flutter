@@ -7,19 +7,19 @@ const textInputDecoration = InputDecoration(
   ),
   enabledBorder: OutlineInputBorder(
     borderSide: BorderSide(
-      color: Color(0xffee7b64),
+      color: Color(0xff703efe),
       width: 2,
     ),
   ),
   focusedBorder: OutlineInputBorder(
     borderSide: BorderSide(
-      color: Color(0xffee7b64),
+      color: Color(0xff703efe),
       width: 2,
     ),
   ),
   errorBorder: OutlineInputBorder(
     borderSide: BorderSide(
-      color: Color(0xffee7b64),
+      color: Color(0xff703efe),
       width: 2,
     ),
   ),
@@ -42,7 +42,7 @@ void showSnackBar(context, color, message) {
         style: const TextStyle(fontSize: 14),
       ),
       backgroundColor: color,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       action: SnackBarAction(
         label: "OK",
         onPressed: () {},
