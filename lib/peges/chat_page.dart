@@ -76,7 +76,7 @@ class _ChatPageState extends State<ChatPage> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
               width: MediaQuery.of(context).size.width,
-              color: Colors.grey[700],
+              color: const Color.fromARGB(123, 97, 97, 97),
               child: Row(
                 children: [
                   Expanded(
@@ -127,16 +127,45 @@ class _ChatPageState extends State<ChatPage> {
       stream: chats,
       builder: (context, AsyncSnapshot snapshot) {
         return snapshot.hasData
-            ? ListView.builder(
-                itemCount: snapshot.data.docs.length,
-                itemBuilder: (context, index) {
-                  return MessageTile(
-                    message: snapshot.data.docs[index]["message"],
-                    sender: snapshot.data.docs[index]["sender"],
-                    sentByMe:
-                        widget.userName == snapshot.data.docs[index]["sender"],
+            ? GestureDetector(
+                onDoubleTap: () {
+                  showDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: const Text("Delete"),
+                        content: const Text(
+                            "Are you sure you want to delete this message?"),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text("Cancel"),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              messageController.text = "";
+                            },
+                            child: const Text("Delete"),
+                          ),
+                        ],
+                      );
+                    },
                   );
                 },
+                child: ListView.builder(
+                  itemCount: snapshot.data.docs.length,
+                  itemBuilder: (context, index) {
+                    return MessageTile(
+                      message: snapshot.data.docs[index]["message"],
+                      sender: snapshot.data.docs[index]["sender"],
+                      sentByMe: widget.userName ==
+                          snapshot.data.docs[index]["sender"],
+                    );
+                  },
+                ),
               )
             : Container();
       },

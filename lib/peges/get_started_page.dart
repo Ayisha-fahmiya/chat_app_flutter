@@ -53,33 +53,11 @@ class _GetStartedState extends State<GetStarted> {
                           alignment: Alignment.topRight,
                         ),
                       ),
-                      // Container(
-                      //   decoration: const BoxDecoration(
-                      //     color: Color(0xff703efe),
-                      //     shape: BoxShape.circle,
-                      //   ),
-                      //   child: Image.asset(
-                      //     "assets/womanTwo-removebg-preview.png",
-                      //     fit: BoxFit.cover,
-                      //     alignment: Alignment.topCenter,
-                      //   ),
-                      // ),
                       const CircleAvatar(
                         backgroundColor: Color(0xff703efe),
                         backgroundImage:
                             AssetImage("assets/womanTwo-removebg-preview.png"),
                       ),
-                      // Container(
-                      //   decoration: const BoxDecoration(
-                      //     color: Color(0xff703efe),
-                      //     shape: BoxShape.circle,
-                      //   ),
-                      //   child: Image.asset(
-                      //     "assets/manOne-removebg-preview.png",
-                      //     fit: BoxFit.cover,
-                      //     alignment: Alignment.topCenter,
-                      //   ),
-                      // ),
                       const CircleAvatar(
                         backgroundColor: Color(0xff703efe),
                         backgroundImage:

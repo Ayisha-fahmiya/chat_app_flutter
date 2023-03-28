@@ -7,7 +7,7 @@ const textInputDecoration = InputDecoration(
   ),
   enabledBorder: OutlineInputBorder(
     borderSide: BorderSide(
-      color: Color(0xff703efe),
+      color: Color.fromARGB(57, 113, 62, 254),
       width: 2,
     ),
   ),
@@ -19,7 +19,7 @@ const textInputDecoration = InputDecoration(
   ),
   errorBorder: OutlineInputBorder(
     borderSide: BorderSide(
-      color: Color(0xff703efe),
+      color: Colors.red,
       width: 2,
     ),
   ),

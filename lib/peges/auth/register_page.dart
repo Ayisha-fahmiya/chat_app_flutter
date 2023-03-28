@@ -37,6 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      const SizedBox(height: 20),
                       const Text(
                         "Groopie",
                         style: TextStyle(
@@ -52,7 +53,9 @@ class _RegisterPageState extends State<RegisterPage> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
+                      const SizedBox(height: 60),
                       Image.asset("assets/register.png"),
+                      const SizedBox(height: 60),
                       TextFormField(
                         decoration: textInputDecoration.copyWith(
                           labelText: "Full Name",

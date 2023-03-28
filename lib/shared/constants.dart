@@ -8,3 +8,5 @@ class Constants {
   static String projectId = "chatapp-ayisha";
   final primaryColor = const Color(0xff703efe);
 }
+
+const Color primaryClr = Color(0xff703efe);
