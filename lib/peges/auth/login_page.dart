@@ -1,6 +1,7 @@
 import 'package:chat_app/peges/auth/register_page.dart';
 import 'package:chat_app/service/auth_service.dart';
 import 'package:chat_app/service/database_service.dart';
+import 'package:chat_app/shared/constants.dart';
 import 'package:chat_app/widgets/widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -27,8 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: _isLoading
           ? Center(
-              child: CircularProgressIndicator(
-                  color: Theme.of(context).primaryColor),
+              child: CircularProgressIndicator(color: primaryClr),
             )
           : SingleChildScrollView(
               child: Padding(
@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Email",
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Theme.of(context).primaryColor,
+                            color: primaryClr,
                           ),
                         ),
                         onChanged: (value) {
@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Password",
                           prefixIcon: Icon(
                             Icons.lock,
-                            color: Theme.of(context).primaryColor,
+                            color: primaryClr,
                           ),
                         ),
                         validator: (value) {
@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Theme.of(context).primaryColor,
+                            backgroundColor: primaryClr,
                             elevation: 0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),

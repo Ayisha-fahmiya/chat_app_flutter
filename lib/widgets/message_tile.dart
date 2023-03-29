@@ -1,3 +1,4 @@
+import 'package:chat_app/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class MessageTile extends StatefulWidget {
@@ -44,7 +45,7 @@ class _MessageTileState extends State<MessageTile> {
                   bottomRight: Radius.circular(20),
                 ),
           color: widget.sentByMe
-              ? Theme.of(context).primaryColor
+              ? primaryClr
               : const Color.fromARGB(40, 158, 158, 158),
         ),
         child: Column(

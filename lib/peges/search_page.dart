@@ -1,6 +1,7 @@
 import 'package:chat_app/helper/helper_function.dart';
 import 'package:chat_app/peges/chat_page.dart';
 import 'package:chat_app/service/database_service.dart';
+import 'package:chat_app/shared/constants.dart';
 import 'package:chat_app/widgets/widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -50,7 +51,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: primaryClr,
         title: const Text(
           "Search",
           style: TextStyle(
@@ -63,7 +64,7 @@ class _SearchPageState extends State<SearchPage> {
       body: Column(
         children: [
           Container(
-            color: Theme.of(context).primaryColor,
+            color: primaryClr,
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Row(
               children: [
@@ -162,7 +163,7 @@ class _SearchPageState extends State<SearchPage> {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       leading: CircleAvatar(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: primaryClr,
         child: Text(
           groupName.substring(0, 1).toUpperCase(),
           style: const TextStyle(color: Colors.white),
@@ -228,7 +229,7 @@ class _SearchPageState extends State<SearchPage> {
             : Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Theme.of(context).primaryColor,
+                  color: primaryClr,
                 ),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

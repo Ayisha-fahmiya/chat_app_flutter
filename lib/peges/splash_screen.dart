@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'package:chat_app/peges/home_page.dart';
 import 'package:chat_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import '../helper/helper_function.dart';
 import 'get_started_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -11,16 +13,33 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  bool _isSignedIn = false;
+
   @override
   void initState() {
     super.initState();
-    Timer(
-      const Duration(seconds: 1),
+    navigateHome();
+    getUserLoggedInStatus();
+  }
+
+  navigateHome() async {
+    await Future.delayed(
+      Duration(seconds: 1),
       () => nextScreenReplace(
         context,
-        const GetStarted(),
+        _isSignedIn ? const HomePage() : const GetStarted(),
       ),
     );
+  }
+
+  getUserLoggedInStatus() async {
+    await HelperFunctions.getUserLoggedInStatus().then((value) {
+      if (value != null) {
+        setState(() {
+          _isSignedIn = value;
+        });
+      }
+    });
   }
 
   @override

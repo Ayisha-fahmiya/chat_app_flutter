@@ -2,6 +2,7 @@ import 'package:chat_app/helper/helper_function.dart';
 import 'package:chat_app/peges/auth/login_page.dart';
 import 'package:chat_app/peges/home_page.dart';
 import 'package:chat_app/service/auth_service.dart';
+import 'package:chat_app/shared/constants.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/widgets.dart';
@@ -24,9 +25,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _isLoading
-          ? Center(
-              child: CircularProgressIndicator(
-                  color: Theme.of(context).primaryColor))
+          ? const Center(child: CircularProgressIndicator(color: primaryClr))
           : SingleChildScrollView(
               child: Padding(
                 padding:
@@ -61,7 +60,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           labelText: "Full Name",
                           prefixIcon: Icon(
                             Icons.person,
-                            color: Theme.of(context).primaryColor,
+                            color: primaryClr,
                           ),
                         ),
                         onChanged: (value) {
@@ -86,7 +85,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           labelText: "Email",
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Theme.of(context).primaryColor,
+                            color: primaryClr,
                           ),
                         ),
                         onChanged: (value) {
@@ -112,7 +111,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           labelText: "Password",
                           prefixIcon: Icon(
                             Icons.lock,
-                            color: Theme.of(context).primaryColor,
+                            color: primaryClr,
                           ),
                         ),
                         validator: (value) {
@@ -133,7 +132,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Theme.of(context).primaryColor,
+                            backgroundColor: primaryClr,
                             elevation: 0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),

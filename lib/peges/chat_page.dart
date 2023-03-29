@@ -1,5 +1,6 @@
 import 'package:chat_app/peges/group_info.dart';
 import 'package:chat_app/service/database_service.dart';
+import 'package:chat_app/shared/constants.dart';
 import 'package:chat_app/widgets/message_tile.dart';
 import 'package:chat_app/widgets/widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -50,7 +51,7 @@ class _ChatPageState extends State<ChatPage> {
         centerTitle: true,
         elevation: 0,
         title: Text(widget.groupName),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: primaryClr,
         actions: [
           IconButton(
             onPressed: () {
@@ -102,7 +103,7 @@ class _ChatPageState extends State<ChatPage> {
                       height: 50,
                       width: 50,
                       decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
+                        color: primaryClr,
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: const Center(

@@ -1,6 +1,6 @@
+import 'package:chat_app/peges/auth/login_page.dart';
 import 'package:chat_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'LoginOrHome_page.dart';
 
 class GetStarted extends StatefulWidget {
   const GetStarted({super.key});
@@ -116,7 +116,7 @@ class _GetStartedState extends State<GetStarted> {
                   ),
                 ),
                 onPressed: () {
-                  nextScreen(context, const LoginOrHome());
+                  nextScreen(context, const LoginPage());
                 },
                 child: const Text(
                   "Get Started",
