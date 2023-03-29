@@ -44,9 +44,7 @@ class _MessageTileState extends State<MessageTile> {
                   topRight: Radius.circular(20),
                   bottomRight: Radius.circular(20),
                 ),
-          color: widget.sentByMe
-              ? primaryClr
-              : const Color.fromARGB(40, 158, 158, 158),
+          color: widget.sentByMe ? primaryClr : Colors.white,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

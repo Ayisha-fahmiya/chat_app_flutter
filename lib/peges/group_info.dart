@@ -49,10 +49,30 @@ class _GroupInfoState extends State<GroupInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 245, 245, 245),
       appBar: AppBar(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          ),
+        ),
+        toolbarHeight: 90,
+        backgroundColor: Colors.white,
         centerTitle: true,
-        title: const Text("Group Info"),
-        backgroundColor: primaryClr,
+        title: const Text(
+          "Group Info",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
         elevation: 0,
         actions: [
           IconButton(
@@ -98,13 +118,16 @@ class _GroupInfoState extends State<GroupInfo> {
                 },
               );
             },
-            icon: const Icon(Icons.exit_to_app),
+            icon: const Icon(
+              Icons.exit_to_app,
+              color: Colors.black,
+            ),
           ),
         ],
       ),
       body: Container(
         padding: const EdgeInsets.all(20),
-        child: Column(
+        child: ListView(
           children: [
             Container(
               padding: const EdgeInsets.all(20),

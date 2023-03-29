@@ -49,34 +49,47 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 245, 245, 245),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: primaryClr,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
         title: const Text(
           "Search",
           style: TextStyle(
             fontSize: 27,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
       body: Column(
         children: [
           Container(
-            color: primaryClr,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              ),
+            ),
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Row(
               children: [
                 Expanded(
                   child: TextField(
                     controller: searchController,
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.black),
                     decoration: const InputDecoration(
                         hintText: "Search groups....",
                         border: InputBorder.none,
-                        hintStyle:
-                            TextStyle(color: Colors.white, fontSize: 16)),
+                        hintStyle: TextStyle(color: Colors.grey, fontSize: 16)),
                   ),
                 ),
                 GestureDetector(
@@ -87,12 +100,12 @@ class _SearchPageState extends State<SearchPage> {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.1),
+                      color: Colors.black.withOpacity(0.05),
                       borderRadius: BorderRadius.circular(40),
                     ),
                     child: const Icon(
                       Icons.search,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),

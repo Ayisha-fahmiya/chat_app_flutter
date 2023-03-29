@@ -1,7 +1,7 @@
 import 'package:chat_app/helper/helper_function.dart';
-import 'package:chat_app/peges/auth/login_page.dart';
 import 'package:chat_app/peges/profile_page.dart';
 import 'package:chat_app/peges/search_page.dart';
+import 'package:chat_app/peges/settings_page.dart';
 import 'package:chat_app/service/auth_service.dart';
 import 'package:chat_app/service/database_service.dart';
 import 'package:chat_app/shared/constants.dart';
@@ -38,63 +38,10 @@ class _HomePageState extends State<HomePage> {
         return groupList();
         break;
       case 1:
-        return ProfilePage(
-          userName: userName,
-          email: email,
-        );
+        return ProfilePage(userName: userName, email: email);
         break;
       case 2:
-        return SafeArea(
-          child: ListTile(
-            tileColor: Colors.grey,
-            onTap: () async {
-              showDialog(
-                barrierDismissible: false,
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text("Logout"),
-                    content: const Text("Are you sure you want to logout?"),
-                    actions: [
-                      IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Icon(
-                          Icons.cancel,
-                          color: Colors.red,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () async {
-                          await authService.signOut();
-                          // ignore: use_build_context_synchronously
-                          Navigator.of(context).pushAndRemoveUntil(
-                              MaterialPageRoute(
-                                builder: (context) => const LoginPage(),
-                              ),
-                              (route) => false);
-                        },
-                        icon: const Icon(
-                          Icons.done,
-                          color: Colors.green,
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-            selectedColor: Theme.of(context).primaryColor,
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            leading: const Icon(Icons.exit_to_app),
-            title: const Text(
-              "Logout",
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-        );
+        return SettingsPage(context: context, authService: authService);
         break;
       default:
         return Container();
@@ -145,6 +92,7 @@ class _HomePageState extends State<HomePage> {
       body: bottomNavPages(),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: primaryClr,
+        unselectedItemColor: Colors.grey[400],
         type: BottomNavigationBarType.fixed,
         selectedLabelStyle:
             const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
@@ -152,7 +100,7 @@ class _HomePageState extends State<HomePage> {
             const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.group),
+            icon: Icon(Icons.language),
             label: 'Groups',
           ),
           BottomNavigationBarItem(
@@ -186,9 +134,9 @@ class _HomePageState extends State<HomePage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   _isLoading == true
-                      ? Center(
+                      ? const Center(
                           child: CircularProgressIndicator(
-                            color: Theme.of(context).primaryColor,
+                            color: primaryClr,
                           ),
                         )
                       : TextField(
@@ -200,8 +148,7 @@ class _HomePageState extends State<HomePage> {
                           style: const TextStyle(color: Colors.black),
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Theme.of(context).primaryColor),
+                              borderSide: const BorderSide(color: primaryClr),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             errorBorder: OutlineInputBorder(
@@ -209,8 +156,7 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(20),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Theme.of(context).primaryColor),
+                              borderSide: const BorderSide(color: primaryClr),
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
@@ -223,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).primaryColor,
+                    backgroundColor: primaryClr,
                   ),
                   child: const Text("CANCEL"),
                 ),
@@ -246,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).primaryColor,
+                    backgroundColor: primaryClr,
                   ),
                   child: const Text("CREATE"),
                 ),
@@ -260,6 +206,7 @@ class _HomePageState extends State<HomePage> {
 
   groupList() {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 245, 245, 245),
       // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -274,21 +221,31 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       appBar: AppBar(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          ),
+        ),
+        toolbarHeight: 90,
+        centerTitle: true,
+        elevation: 0,
         actions: [
           IconButton(
             onPressed: () {
               nextScreen(context, const SearchPage());
             },
-            icon: const Icon(Icons.search),
+            icon: const Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
           ),
         ],
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: primaryClr,
+        backgroundColor: Colors.white,
         title: const Text(
           "Groups",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 27,
           ),
@@ -322,7 +279,7 @@ class _HomePageState extends State<HomePage> {
           } else {
             return Center(
               child: CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
+                color: primaryClr,
               ),
             );
           }
