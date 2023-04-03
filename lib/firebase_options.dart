@@ -66,6 +66,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '158267982169',
     projectId: 'chatapp-ayisha',
     storageBucket: 'chatapp-ayisha.appspot.com',
+    androidClientId: '158267982169-r0425atnvatehclrfi1m09s24mfjm5s3.apps.googleusercontent.com',
     iosClientId: '158267982169-5sboj9ap7t9tftujpr41t74qfb0m92km.apps.googleusercontent.com',
     iosBundleId: 'com.example.chatApp',
   );
@@ -76,6 +77,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '158267982169',
     projectId: 'chatapp-ayisha',
     storageBucket: 'chatapp-ayisha.appspot.com',
+    androidClientId: '158267982169-r0425atnvatehclrfi1m09s24mfjm5s3.apps.googleusercontent.com',
     iosClientId: '158267982169-5sboj9ap7t9tftujpr41t74qfb0m92km.apps.googleusercontent.com',
     iosBundleId: 'com.example.chatApp',
   );

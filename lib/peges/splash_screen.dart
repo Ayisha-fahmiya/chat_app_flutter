@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:chat_app/peges/home_page.dart';
 import 'package:chat_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
+import 'package:shimmer/shimmer.dart';
 import '../helper/helper_function.dart';
 import 'get_started_page.dart';
 
@@ -24,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   navigateHome() async {
     await Future.delayed(
-      Duration(seconds: 1),
+      const Duration(seconds: 2),
       () => nextScreenReplace(
         context,
         _isSignedIn ? const HomePage() : const GetStarted(),
@@ -44,23 +46,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // backgroundColor: const Color(0xff703efe),
+    return const Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/Logo.png"),
-            const Text(
-              "Groopie",
-              style: TextStyle(
-                color: Color.fromARGB(110, 0, 0, 0),
-                fontSize: 27,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Gruppo",
-              ),
-            ),
-          ],
+        child: SizedBox(
+          height: 150,
+          child: RiveAnimation.asset("assets/GChatLogoAnimated.riv"),
         ),
       ),
     );

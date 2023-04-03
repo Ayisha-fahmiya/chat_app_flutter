@@ -9,4 +9,4 @@ class Constants {
   final primaryColor = const Color(0xff703efe);
 }
 
-const Color primaryClr = Color(0xff703efe);
+const Color primaryClr = Color.fromARGB(255, 136, 94, 253);

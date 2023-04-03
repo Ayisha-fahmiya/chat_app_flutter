@@ -54,12 +54,12 @@ class _GetStartedState extends State<GetStarted> {
                         ),
                       ),
                       const CircleAvatar(
-                        backgroundColor: Color(0xff703efe),
+                        backgroundColor: Color.fromARGB(255, 136, 94, 253),
                         backgroundImage:
                             AssetImage("assets/womanTwo-removebg-preview.png"),
                       ),
                       const CircleAvatar(
-                        backgroundColor: Color(0xff703efe),
+                        backgroundColor: Color.fromARGB(255, 136, 94, 253),
                         backgroundImage:
                             AssetImage("assets/manOne-removebg-preview.png"),
                       ),
@@ -110,7 +110,7 @@ class _GetStartedState extends State<GetStarted> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff703efe),
+                  backgroundColor: const Color.fromARGB(255, 136, 94, 253),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40),
                   ),
