@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:chat_app/helper/helper_function.dart';
 import 'package:chat_app/service/database_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';

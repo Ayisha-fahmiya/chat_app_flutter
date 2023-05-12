@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class DatabaseServices {
   final String? uid;
@@ -136,39 +135,4 @@ class DatabaseServices {
       "recentMessageTime": chatMessageData["time"].toString(),
     });
   }
-
-//   Future<ZIMMessageDeletedResult> deleteMessages(
-//       List<ZIMMessage> messageList,
-//       String conversationID,
-//       ZIMConversationType conversationType,
-//       ZIMMessageDeleteConfig config);
-//   deleteMessage(String messageId) async {
-//     // 1. Create a ZIM SDK obejct.
-//     await ZIM.getInstance().create(appID);
-
-// // 2. Log in
-//     ZIMUserInfo userInfo = ZIMUserInfo();
-
-//     userInfo.userID = 'userID';
-//     userInfo.userName = 'userName';
-
-//     String token = 'token';
-//     await ZIM
-//         .getInstance()
-//         .login(userInfo, token)
-//         .then((value) => {})
-//         .catchError((onError) {});
-
-// // 3. Delete the specified messages.
-//     String conversationID = 'xxxx';
-//     List<ZIMMessage> messageList = [];
-//     ZIMMessageDeleteConfig config = ZIMMessageDeleteConfig();
-//     config.isAlsoDeleteServerMessage = false;
-//     await ZIM
-//         .getInstance()
-//         .deleteMessages(
-//             messageList, conversationID, ZIMConversationType.peer, config)
-//         .then((value) => {})
-//         .catchError((onError) {});
-//   }
 }

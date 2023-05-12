@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HelperFunctions {
+  // final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   // keys
   static String userLoggedInKey = "LOGGEDINKEY";
   static String userNameKey = "USERNAMEKEY";
@@ -37,4 +38,12 @@ class HelperFunctions {
     SharedPreferences sf = await SharedPreferences.getInstance();
     return sf.getString(userNameKey);
   }
+
+  // Future<void> deleteMessage(String mssgId) async {
+  //   try {
+  //     await _firestore.collection("messages").doc(mssgId).delete();
+  //   } catch (err) {
+  //     print(err.toString());
+  //   }
+  // }
 }

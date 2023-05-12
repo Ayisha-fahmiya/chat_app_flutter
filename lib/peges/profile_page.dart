@@ -2,8 +2,8 @@ import 'package:chat_app/service/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
-  String userName;
-  String email;
+  final String userName;
+  final String email;
   ProfilePage({
     super.key,
     required this.userName,

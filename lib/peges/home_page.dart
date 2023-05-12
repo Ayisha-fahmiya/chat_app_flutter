@@ -36,16 +36,15 @@ class _HomePageState extends State<HomePage> {
     switch (selectedIndex) {
       case 0:
         return groupList();
-        break;
+
       case 1:
         return ProfilePage(userName: userName, email: email);
-        break;
+
       case 2:
         return SettingsPage(context: context, authService: authService);
-        break;
+
       default:
         return Container();
-        break;
     }
   }
 

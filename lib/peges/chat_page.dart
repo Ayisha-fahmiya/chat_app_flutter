@@ -57,7 +57,7 @@ class _ChatPageState extends State<ChatPage> {
       },
     );
     return Scaffold(
-      backgroundColor:const Color.fromARGB(244, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(244, 255, 255, 255),
       appBar: AppBar(
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -189,9 +189,7 @@ class _ChatPageState extends State<ChatPage> {
                               child: const Text("Cancel"),
                             ),
                             TextButton(
-                              onPressed: () {
-                                messageController.text = "";
-                              },
+                              onPressed: () {},
                               child: const Text("Delete"),
                             ),
                           ],

@@ -3,7 +3,6 @@ import 'package:chat_app/peges/home_page.dart';
 import 'package:chat_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
-import 'package:shimmer/shimmer.dart';
 import '../helper/helper_function.dart';
 import 'get_started_page.dart';
 
