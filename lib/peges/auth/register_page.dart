@@ -38,7 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     children: [
                       const SizedBox(height: 20),
                       const Text(
-                        "Groopie",
+                        "GChat",
                         style: TextStyle(
                           fontSize: 40,
                           fontWeight: FontWeight.bold,
